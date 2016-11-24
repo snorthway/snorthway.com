@@ -1,0 +1,16 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Personal site",
+  "main": "index.js",
+  "dependencies": {
+    "next": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "dev": "next"
+  },
+  "author": "Stephanie Northway",
+  "license": "ISC"
+}
