@@ -4,33 +4,33 @@ import Head from 'next/head'
 
 import NavigationBar from '../components/NavigationBar'
 
-const MainContainer = React.createClass({
+class MainContainer extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-  propTypes: {
-    children: React.PropTypes.any
-  },
-
-  render: () => {
-    console.log(this)
+  render() {
     return (
       <div className={style(styles.mainContainer)}>
         <Head>
-          <title>snorthway.com</title>
+          <title>snorthway.com - Your number one source for snorthway related news and information</title>
           <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" rel="stylesheet"></link>
           <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css" rel="stylesheet"></link>
           <link href="https://fonts.googleapis.com/css?family=Andada" rel="stylesheet"></link>
           <link href="https://fonts.googleapis.com/css?family=Hind:700" rel="stylesheet"></link>
+          <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"></link>
           <link rel="icon" href="/static/favicon.png" type="image/png" />
           <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
         <div className={style(styles.contentContainer)}>
           <NavigationBar active={0}/>
           <hr className={style(styles.hr)}/>
+          {this.props.children}
         </div>
       </div>
     )
   }
-})
+}
 
 const styles = {
   mainContainer: {

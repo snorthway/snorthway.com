@@ -17,30 +17,24 @@ const NavigationBar = React.createClass ({
     return (
       <div className={style(styles.navContainer)}>
       <nav className={style(styles.nav)}>
-        <h1 className={style(styles.title)}>snorthway</h1>
+        <h1 className={style(styles.title)}>snorthway.com</h1>
         <ul className={style(styles.navList)}>
           <li className={style(styles.navItem)}
             style={this.props.active === 0 ? {color: 'white'} : {color: 'inherit'}}>
             <Link href="about">
-              <a className={style(styles.link)}>About</a>
+              <a className={style(styles.link)}>about</a>
             </Link>
           </li>
           <li className={style(styles.navItem)}>
-            Projects
+            projects
           </li>
           <li className={style(styles.navItem)}>
-            Contact
+            contact
           </li>
         </ul>
       </nav>
       </div>
     ) 
-  },
-
-  getStyle: function() {
-    // switch this.props.active {
-    //   case 0
-    // }
   }
 
 })
@@ -56,6 +50,7 @@ const styles = {
     color: '#87FFFB',
     display: 'flex',
     flexDirection: 'horizontal',
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
     margin: '0 auto',
   },

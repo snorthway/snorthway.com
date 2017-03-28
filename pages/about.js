@@ -8,12 +8,25 @@ export default class extends React.Component {
     return (
       <div>
       <MainContainer>
-        <div class="container ten columns">
-          <p>Testing this silly container business!!!!!</p>
+        <div className={style(styles.main)}>
+          <h5>about snorthway</h5>
+          <p>
+            Software engineer looking to move down the abstraction ladder. Ideally moving into firmware, embedded development or electrical engineering. Prefer social and environmental or otherwise altruistic missions. Deviating interest in information security. 
+          </p>
         </div>
-        <div class="container five columns">STIIIILLLL TESTINGGGNGNSGDSGNG</div>
         </MainContainer>
       </div>
     )
   }
+}
+
+const styles = {
+  main: {
+    width: '75%',
+    color: 'white',
+    textAlign: 'center',
+    margin: '0 auto',
+    fontFamily: 'Lato',
+  }
+  
 }
