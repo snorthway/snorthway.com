@@ -1,5 +1,6 @@
 import React from 'react'
 import { style } from 'next/css'
+import Link from 'next/link'
 
 const NavigationBar = React.createClass ({
   propTypes: {
@@ -20,7 +21,9 @@ const NavigationBar = React.createClass ({
         <ul className={style(styles.navList)}>
           <li className={style(styles.navItem)}
             style={this.props.active === 0 ? {color: 'white'} : {color: 'inherit'}}>
-            About
+            <Link href="about">
+              <a className={style(styles.link)}>About</a>
+            </Link>
           </li>
           <li className={style(styles.navItem)}>
             Projects
@@ -72,6 +75,10 @@ const styles = {
   title: {
     fontSize: 50,
     margin: 0,
+  },
+  link: {
+    textDecoration: 'none',
+    color: 'inherit',
   },
 }
 
