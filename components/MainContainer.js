@@ -13,7 +13,7 @@ class MainContainer extends React.Component {
     return (
       <div className={style(styles.mainContainer)}>
         <Head>
-          <title>snorthway.com - Your number one source for snorthway related news and information</title>
+          <title>snorthway.com - Your number one source for snorthway-related news and information</title>
           <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" rel="stylesheet"></link>
           <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css" rel="stylesheet"></link>
           <link href="https://fonts.googleapis.com/css?family=Andada" rel="stylesheet"></link>
@@ -23,7 +23,7 @@ class MainContainer extends React.Component {
           <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
         <div className={style(styles.contentContainer)}>
-          <NavigationBar active={0}/>
+          <NavigationBar active={this.props.navActive}/>
           <hr className={style(styles.hr)}/>
           {this.props.children}
         </div>
@@ -32,21 +32,24 @@ class MainContainer extends React.Component {
   }
 }
 
+MainContainer.propTypes = {
+  navActive: React.PropTypes.number.isRequired
+}
+
 const styles = {
   mainContainer: {
     height: 900,
     display: 'flex',
     justifyContent: 'center',
-    backgroundImage: 'url(/static/R1-02548-006Ae.jpg)',
-    backgroundPosition: 'center',
+    background: 'url(/static/photo_overlay.png) no-repeat center center fixed',
+    backgroundSize: 'cover',
     fontFamily: 'Hind',
   },
   contentContainer: {
     height: '100%',
     width: '100%',
     textAlign: 'center',
-    color: '#D6DDF1',
-    backgroundImage: 'linear-gradient(-180deg, rgba(32,14,14,0.00) 0%, rgba(6,44,79,0.85) 59%)',
+    overflowY: 'scroll',
   },
 
   hr: {

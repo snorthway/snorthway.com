@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const NavigationBar = React.createClass ({
   propTypes: {
-    active: React.PropTypes.number,
+    active: React.PropTypes.number.isRequired,
   },
 
   getDefaultProps: function() {
@@ -25,10 +25,14 @@ const NavigationBar = React.createClass ({
               <a className={style(styles.link)}>about</a>
             </Link>
           </li>
-          <li className={style(styles.navItem)}>
-            projects
+          <li className={style(styles.navItem)}
+            style={this.props.active === 1 ? {color: 'white'} : {color: 'inherit'}}>
+            <Link href="projects">
+              <a className={style(styles.link)}>projects</a>
+            </Link>
           </li>
-          <li className={style(styles.navItem)}>
+          <li className={style(styles.navItem)}
+            style={this.props.active === 2 ? {color: 'white'} : {color: 'inherit'}}>
             contact
           </li>
         </ul>

@@ -7,7 +7,7 @@ export default class extends React.Component {
   render() {
     return (
       <div>
-      <MainContainer>
+      <MainContainer navActive={0}>
         <div className={style(styles.main)}>
           <h5>about snorthway</h5>
           <p>
@@ -28,5 +28,4 @@ const styles = {
     margin: '0 auto',
     fontFamily: 'Lato',
   }
-  
 }
