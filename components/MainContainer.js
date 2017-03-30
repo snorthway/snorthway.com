@@ -2,6 +2,8 @@ import React from 'react'
 import { style } from 'next/css'
 import Head from 'next/head'
 
+import globalStyles from '../static/globalStyles'
+
 import NavigationBar from '../components/NavigationBar'
 
 class MainContainer extends React.Component {
@@ -27,6 +29,10 @@ class MainContainer extends React.Component {
           <hr className={style(styles.hr)}/>
           {this.props.children}
         </div>
+        <footer className={style(styles.footer)}>
+          <hr className={style(styles.hr)}/>
+          ©️2017 S. Northway
+        </footer>
       </div>
     )
   }
@@ -38,12 +44,13 @@ MainContainer.propTypes = {
 
 const styles = {
   mainContainer: {
-    height: 900,
+    minHeight: 900,
     display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: 'center',
-    background: 'url(/static/photo_overlay.png) no-repeat center center fixed',
+    background: 'url(/static/photo_overlay_bw.png) no-repeat center center fixed',
     backgroundSize: 'cover',
-    fontFamily: 'Hind',
+    fontFamily: globalStyles.headingFont,
   },
   contentContainer: {
     height: '100%',
@@ -51,10 +58,17 @@ const styles = {
     textAlign: 'center',
     overflowY: 'scroll',
   },
-
+  footer: {
+    color: globalStyles.bodyColor,
+    fontFamily: globalStyles.bodyFont,
+    width: '100%',
+    textAlign: 'center',
+    paddingBottom: '5%',
+  },
   hr: {
     // borderColor: '#C5E1FE',
-    borderColor: '#87FFFB',
+    // borderColor: '#87FFFB',
+    borderColor: globalStyles.accentColor,
     width: '85%',
   },
 }

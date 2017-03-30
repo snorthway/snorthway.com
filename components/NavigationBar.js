@@ -2,6 +2,8 @@ import React from 'react'
 import { style } from 'next/css'
 import Link from 'next/link'
 
+import globalStyles from '../static/globalStyles'
+
 const NavigationBar = React.createClass ({
   propTypes: {
     active: React.PropTypes.number.isRequired,
@@ -14,27 +16,24 @@ const NavigationBar = React.createClass ({
   },
 
   render: function() {
+    const pages = ['about', 'projects', 'contact']
+    const links = pages.map((l) => {
+      return (
+        <li className={style(styles.navItem)}
+          style={this.props.active === pages.indexOf(l) ? {color: 'white'} : {color: 'inherit'}}>
+          <Link href={l}>
+            <a className={style(styles.link)}><h5>{l}</h5></a>
+          </Link>
+        </li>
+      )
+    })
+
     return (
       <div className={style(styles.navContainer)}>
       <nav className={style(styles.nav)}>
-        <h1 className={style(styles.title)}>snorthway.com</h1>
+        <h1 className={style(styles.title)}><span className={style({color: globalStyles.bodyColor})}>s</span>northway</h1>
         <ul className={style(styles.navList)}>
-          <li className={style(styles.navItem)}
-            style={this.props.active === 0 ? {color: 'white'} : {color: 'inherit'}}>
-            <Link href="about">
-              <a className={style(styles.link)}>about</a>
-            </Link>
-          </li>
-          <li className={style(styles.navItem)}
-            style={this.props.active === 1 ? {color: 'white'} : {color: 'inherit'}}>
-            <Link href="projects">
-              <a className={style(styles.link)}>projects</a>
-            </Link>
-          </li>
-          <li className={style(styles.navItem)}
-            style={this.props.active === 2 ? {color: 'white'} : {color: 'inherit'}}>
-            contact
-          </li>
+          {links}
         </ul>
       </nav>
       </div>
@@ -51,7 +50,7 @@ const styles = {
   },
   nav: {
     width: '85%',
-    color: '#87FFFB',
+    color: globalStyles.accentColor,
     display: 'flex',
     flexDirection: 'horizontal',
     flexWrap: 'wrap',
@@ -64,8 +63,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'horizontal',
     justifyContent: 'center',
-    alignItems: 'flex-end',
-    
+    alignItems: 'flex-end', 
     margin: 0,
   },
   navItem: {
@@ -78,6 +76,7 @@ const styles = {
   link: {
     textDecoration: 'none',
     color: 'inherit',
+    ':hover': globalStyles.bodyColor,
   },
 }
 
