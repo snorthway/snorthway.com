@@ -19,9 +19,9 @@ export default class extends React.Component {
           </div>
           <p className={style(styles.p)}>
             Rural Minnesota native, now Boston-based, currently working as a software applications
-	    engineer at <a className={style(styles.link)} href="https://righthandrobotics.com">RightHand Robotics</a>. 
+	    engineer at RightHand Robotics. 
             I care deeply about advancing technical literacy and preparing the workforce for a more automated world.
-            Over the past 2 years I have organized/taught a <a className={style(styles.link)} href="https://girlswhocode.comm">Girls Who Code</a> club, co-taught a high school 
+            Over the past 2 years I have organized/taught a <a className={style(styles.link)} href="https://girlswhocode.com">Girls Who Code</a> club, co-taught a high school 
             computer science class through <a className={style(styles.link)} href="https://tealsk12.org">TEALS</a>, and 
             served as a private calculus tutor.
           </p>
