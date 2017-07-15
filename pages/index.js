@@ -19,21 +19,17 @@ export default class extends React.Component {
             <img src='/static/sawing.jpg' className={style(styles.img)} alt="using a diamond saw to cut a champagne bottle in half"/>
           </div>
           <p className={style(styles.p)}>
-            Rural Minnesota native, now Boston-based engineer (Olin College Class of 2015, Electrical and Computer Engineering). 
-            I care deeply about advancing environmental sustainability and technical literacy. On the side, I co-teach a high school 
-            computer science class and serve as a private calculus tutor.         
+            Rural Minnesota native, now Boston-based, currently working as a software applications
+      engineer at RightHand Robotics. 
+            I care deeply about advancing technical literacy and preparing the workforce for a more automated world.
+            Over the past 2 years I have organized/taught a <a className={style(styles.link)} href="https://girlswhocode.com">Girls Who Code</a> club, co-taught a high school 
+            computer science class through <a className={style(styles.link)} href="https://tealsk12.org">TEALS</a>, and 
+            served as a private calculus tutor.
           </p>
           <p className={style(styles.p)}>
-            <span className={style({color: globalStyles.accentColor})}>Currently looking for new work!</span> I have 
-            2+ years of web, backend (python/node) and iOS development experience, but am now looking to 
-            move down the abstraction ladder and into firmware/embedded development or electrical engineering. 
-            Seeking hardware companies with social/environmental 
-            or otherwise altruistic missions. Very interested in the information security industry as well. 
-            Comfortable with scrappy startup environments and learning on the fly.
-            
-          </p>
-          <p className={style(styles.p)}>
-            Favorite comic is "Mark Doesn't Understand Animals". I like easter eggs.
+            Work-wise I'm most experienced with web and iOS development, but in my spare time I try to 
+      actually use my electrical engineering degree. Topics of interest right now 
+      include PCB layout, reverse engineering, and digital networks.
           </p>
         </div>
         </MainContainer>
