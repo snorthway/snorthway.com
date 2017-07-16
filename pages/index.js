@@ -61,5 +61,9 @@ const styles = {
   },
   p: {
     textAlign: 'left',
+  },
+  link: {
+    textDecoration: 'none',
+    color: globalStyles.accentColor
   }
 }
