@@ -10,15 +10,23 @@ class ProjectContainer extends React.Component {
 
   render() {
 
+    let link;
+    if ( this.props.link ) {
+      link = <a className={style(styles.link)} href={this.props.link}>{this.props.linkText}</a>
+    }
+
     return (
       <div className={style(styles.main)}>
         <h5 className={style(styles.title)}>{this.props.title}</h5>
         <div className={style({width: String(this.props.imageWidth)+'%'})}>
           {this.props.image}
         </div>
-        <p className={style({width: String(90 - this.props.imageWidth) + '%'})}>
-          {this.props.text}
-        </p>
+        <div className={style({width: String(90 - this.props.imageWidth) + '%'})}>
+          <p>
+            {this.props.text}
+          </p>
+          {link}
+        </div>
         <hr className={style(styles.hr)} />
       </div>
     )
@@ -51,6 +59,10 @@ const styles = {
   hr: {
     borderColor: globalStyles.bodyColor,
     width: '85%',
+  },
+  link: {
+    color: globalStyles.accentColor,
+    textDecoration: 'none',
   }
 }
 

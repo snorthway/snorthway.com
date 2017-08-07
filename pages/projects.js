@@ -10,6 +10,17 @@ export default class extends React.Component {
   render() {
     const projects = {
 
+      'algorithm animations (2017)': {
+        image: '/static/algoviz.png',
+        altText: 'scatter plot with the result of a 2d random sample consensus algorithm',
+        imageWidth: 35,
+        text: `Creating animations of various algorithms in matplotlib 
+              for fun and enlightenment.`,
+
+        link: 'https://github.com/snorthway/algo-viz',
+        linkText: 'Github',
+      },
+
       'the grove app (2016)': {
         image: '/static/gos_appstore_shot_2.jpeg',
         altText: 'App Store screenshot of the Grove App',
@@ -19,16 +30,22 @@ export default class extends React.Component {
               Wrote it from scratch having never touched Swift or any iOS development.
               Was accepted by the App Store on the first submission. Also built and maintained
               an API for interacting with the device via a node.js server, and did all 
-              kinds of dev ops behind the scenes.`
+              kinds of dev ops behind the scenes.`,
+
+        link: 'https://itunes.apple.com/za/app/grove-os/id1059443821?mt=8',
+        linkText: 'App Store',
       }, 
 
       'led strip driver for photon (2016)': {
         image: '/static/led_driver.png',
         altText: 'screenshot of a circuit board laid out in DipTrace',
         imageWidth: 35,
-        text: `As a first foray into PCB layout, took a breadboarded circuit for an LED
+        text: `As a foray into PCB layout, took a breadboarded circuit for an LED
               strip driver made using a Particle Photon microcontroller and laid it out 
-              in DipTrace. Includes knobs to tune RGB values.`
+              in DipTrace. Includes knobs to tune RGB values.`,
+
+        link: 'https://github.com/snorthway/led-controller',
+        linkText: 'Github',
       },
 
       'high speed photography (2015)': {
@@ -38,8 +55,10 @@ export default class extends React.Component {
         text: `Used strobe lights and long shutter speeds to capture artistic photographs
               of liquid media including water, different kinds of oil, milk and more.
               Built and tuned an IR sensor trigger to time the firing of the strobes
-              just after the beam was broken.`
+              just after the beam was broken.`,
 
+        link: '/static/Northway_FPS.pdf',
+        linkText: 'Documentation and Photos',
       },
 
       'microgrid model (2014)': {
@@ -61,7 +80,10 @@ export default class extends React.Component {
               Reverse engineered the op codes and commands 
               from the open-source C++ driver instead of reading the 164-page 
               datasheet. Tested the low-level controls for the screen with an Arduino, then 
-              designed circuits in Verilog to carry them out.`
+              designed circuits in Verilog to carry them out.`,
+
+        link: 'https://github.com/dimitdim/pineapple',
+        linkText: 'Github'
 
       },
 
@@ -86,7 +108,10 @@ export default class extends React.Component {
               the concept for a distributed sensing network for soil 
               health metrics, called "Smart Soil". This included an application 
               that would present the data in actionable terms: for example, how to plan 
-              next year's crops and when/where to amend the soil.`
+              next year's crops and when/where to amend the soil.`,
+
+        link: 'https://www.slideshare.net/snorthway/uocd-reflection-slides',
+        linkText: 'Reflection Slides',
       },
 
       'theremin (2012)': {
@@ -99,7 +124,7 @@ export default class extends React.Component {
               a reference square wave for pitch and another whose frequency was affected by the 
               antenna's capacitance with the hand. XNORing these two signals created variable 
               pitch. For volume, another 555 drove an LC oscillator at its resonant 
-              frequency; closer hand distance raised the capacitance, lowering the volume.`
+              frequency; closer hand distance raised the capacitance, lowering the volume.`,
       },
 
     }
@@ -115,6 +140,8 @@ export default class extends React.Component {
           image={ <img src={ projects[key].image} className={imgStyle} alt={projects[key].altText} /> } 
           imageWidth={projects[key].imageWidth}
           text={projects[key].text}
+          link={projects[key].link}
+          linkText={projects[key].linkText}
         />
       )
     }
