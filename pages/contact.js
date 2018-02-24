@@ -1,5 +1,4 @@
 import React from 'react'
-import { style } from 'next/css'
 
 import globalStyles from '../static/globalStyles'
 
@@ -10,13 +9,13 @@ export default class extends React.Component {
     return (
       <div>
       <MainContainer navActive={2}>
-        <div className={style(styles.main)}>
-          <h5 className={style(styles.h5)}>how to contact snorthway</h5>
+        <div style={styles.main}>
+          <h5 style={styles.h5}>how to contact snorthway</h5>
           <p>
             Email me at &nbsp;
             <a 
               href="mailto:snorthway.info@gmail.com"
-              className={style(styles.link)}
+              style={styles.link}
             >
                snorthway.info@gmail.com
             </a>
@@ -25,7 +24,7 @@ export default class extends React.Component {
             Follow or collaborate with me on &nbsp;
             <a
               href="https://github.com/snorthway"
-              className={style(styles.link)}
+              style={styles.link}
             >
               Github
             </a>
@@ -34,7 +33,7 @@ export default class extends React.Component {
             Tweet your thoughts at &nbsp;
             <a 
               href="https://twitter.com/sn0rthway" 
-              className={style(styles.link)}
+              style={styles.link}
             >
                @sn0rthway
             </a>
@@ -43,7 +42,7 @@ export default class extends React.Component {
             "Connect" with me or just creep my profile on &nbsp;
             <a 
               href="https://www.linkedin.com/pub/stephanie-northway/54/b59/795"
-              className={style(styles.link)}
+              style={styles.link}
             >
             LinkedIn
             </a>

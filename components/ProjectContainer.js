@@ -1,5 +1,5 @@
 import React from 'react'
-import { style } from 'next/css'
+import PropTypes from 'prop-types'
 
 import globalStyles from '../static/globalStyles.js'
 
@@ -12,33 +12,33 @@ class ProjectContainer extends React.Component {
 
     let link;
     if ( this.props.link ) {
-      link = <a className={style(styles.link)} href={this.props.link}>{this.props.linkText}</a>
+      link = <a style={styles.link} href={this.props.link}>{this.props.linkText}</a>
     }
 
     return (
-      <div className={style(styles.main)}>
-        <h5 className={style(styles.title)}>{this.props.title}</h5>
-        <div className={style({width: String(this.props.imageWidth)+'%'})}>
+      <div style={styles.main}>
+        <h5 style={styles.title}>{this.props.title}</h5>
+        <div style={{width: String(this.props.imageWidth)+'%'}}>
           {this.props.image}
         </div>
-        <div className={style({width: String(90 - this.props.imageWidth) + '%'})}>
+        <div style={{width: String(90 - this.props.imageWidth) + '%'}}>
           <p>
             {this.props.text}
           </p>
           {link}
         </div>
-        <hr className={style(styles.hr)} />
+        <hr style={styles.hr} />
       </div>
     )
   }
 }
 
 ProjectContainer.propTypes = {
-  title: React.PropTypes.string.isRequired,
-  image: React.PropTypes.element.isRequired,
-  altText: React.PropTypes.string.isRequired,
-  imageWidth: React.PropTypes.number.isRequired,
-  text: React.PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  image: PropTypes.element.isRequired,
+  altText: PropTypes.string.isRequired,
+  imageWidth: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
 }
 
 const styles = {

@@ -1,46 +1,49 @@
 import React from 'react'
-import { style } from 'next/css'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 
 import globalStyles from '../static/globalStyles'
 
-const NavigationBar = React.createClass ({
-  propTypes: {
-    active: React.PropTypes.number.isRequired,
-  },
+class NavigationBar extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-  getDefaultProps: function() {
+  getDefaultProps() {
     return {
       active: 0,
     }
-  },
+  }
 
-  render: function() {
+  render() {
     const pages = ['about', 'projects', 'contact']
     const links = pages.map((l) => {
       return (
-        <li className={style(styles.navItem)}
+        <li style={styles.navItem}
           style={this.props.active === pages.indexOf(l) ? {color: 'white'} : {color: 'inherit'}}>
           <Link href={l}>
-            <a className={style(styles.link)}><h5>{l}</h5></a>
+            <a style={styles.link}><h5>{l}</h5></a>
           </Link>
         </li>
       )
     })
 
     return (
-      <div className={style(styles.navContainer)}>
-      <nav className={style(styles.nav)}>
-        <h1 className={style(styles.title)}><span className={style({color: globalStyles.bodyColor})}>s</span>northway</h1>
-        <ul className={style(styles.navList)}>
+      <div style={styles.navContainer}>
+      <nav style={styles.nav}>
+        <h1 style={styles.title}><span style={{color: globalStyles.bodyColor}}>s</span>northway</h1>
+        <ul style={styles.navList}>
           {links}
         </ul>
       </nav>
       </div>
     ) 
   }
+}
 
-})
+NavigationBar.propTypes = {
+  active: PropTypes.number.isRequired,
+}
 
 const styles = {
   navContainer: {

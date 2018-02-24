@@ -1,6 +1,6 @@
 import React from 'react'
-import { style } from 'next/css'
 import Head from 'next/head'
+import PropTypes from 'prop-types'
 
 import globalStyles from '../static/globalStyles'
 
@@ -13,7 +13,7 @@ class MainContainer extends React.Component {
 
   render() {
     return (
-      <div className={style(styles.mainContainer)}>
+      <div style={styles.mainContainer}>
         <Head>
           <title>snorthway.com - Your number one source for snorthway-related news and information</title>
           <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" rel="stylesheet"></link>
@@ -24,13 +24,13 @@ class MainContainer extends React.Component {
           <link rel="icon" href="/static/favicon.png" type="image/png" />
           <link rel="shortcut icon" href="/favicon.ico" />
         </Head>
-        <div className={style(styles.contentContainer)}>
+        <div style={styles.contentContainer}>
           <NavigationBar active={this.props.navActive}/>
-          <hr className={style(styles.hr)}/>
+          <hr style={styles.hr}/>
           {this.props.children}
         </div>
-        <footer className={style(styles.footer)}>
-          <hr className={style(styles.hr)}/>
+        <footer style={styles.footer}>
+          <hr style={styles.hr}/>
           ©️2017 S. Northway
         </footer>
       </div>
@@ -39,7 +39,7 @@ class MainContainer extends React.Component {
 }
 
 MainContainer.propTypes = {
-  navActive: React.PropTypes.number.isRequired
+  navActive: PropTypes.number.isRequired
 }
 
 const styles = {

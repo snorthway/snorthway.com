@@ -1,5 +1,4 @@
 import React from 'react'
-import { style } from 'next/css'
 
 import globalStyles from '../static/globalStyles'
 
