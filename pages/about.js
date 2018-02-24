@@ -25,9 +25,8 @@ export default class extends React.Component {
             served as a private calculus tutor.
           </p>
           <p style={styles.p}>
-            Work-wise I'm most experienced with web and iOS development, but in my spare time I try to 
-	    actually use my electrical engineering degree. Topics of interest right now 
-	    include PCB layout, reverse engineering, and digital networks.
+            Work-wise I'm proficient with Python, web and iOS development, and have worked almost exclusively for hardware startups. In my spare time I try to 
+	    actually use my electrical engineering degree. Check out my <a style={styles.link} href='projects'>projects</a> to see what I've been up to.
           </p>
         </div>
         </MainContainer>

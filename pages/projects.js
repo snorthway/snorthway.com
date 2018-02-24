@@ -130,13 +130,13 @@ export default class extends React.Component {
 
 
     let projectElements = []
-    const imgStyle = style({width: '100%'})
+    const imgStyle = {width: '100%'}
     for (let key in projects) {
       projectElements.push(
         <ProjectContainer 
           key={key}
           title={key}
-          image={ <img src={ projects[key].image} className={imgStyle} alt={projects[key].altText} /> } 
+          image={ <img src={ projects[key].image} style={imgStyle} alt={projects[key].altText} /> } 
           imageWidth={projects[key].imageWidth}
           text={projects[key].text}
           link={projects[key].link}
@@ -148,8 +148,8 @@ export default class extends React.Component {
     return (
       <div>
         <MainContainer navActive={1}>
-          <div className={style(styles.main)}>
-            <h5 className={style(styles.h5)}>projects by snorthway</h5>
+          <div style={styles.main}>
+            <h5 style={styles.h5}>projects by snorthway</h5>
             {projectElements}
           </div>
         </MainContainer>

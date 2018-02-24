@@ -19,8 +19,7 @@ class NavigationBar extends React.Component {
     const pages = ['about', 'projects', 'contact']
     const links = pages.map((l) => {
       return (
-        <li style={styles.navItem}
-          style={this.props.active === pages.indexOf(l) ? {color: 'white'} : {color: 'inherit'}}>
+        <li style={styles.navItem(this.props.active === pages.indexOf(l))}>
           <Link href={l}>
             <a style={styles.link}><h5>{l}</h5></a>
           </Link>
@@ -69,8 +68,11 @@ const styles = {
     alignItems: 'flex-end', 
     margin: 0,
   },
-  navItem: {
-    margin: 20,
+  navItem: function(isActive) {
+    return {
+      margin: 20,
+      color: isActive ? 'white' : 'yellow'
+    }
   },
   title: {
     fontSize: 50,
