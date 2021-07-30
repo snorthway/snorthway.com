@@ -31,7 +31,7 @@ class MainContainer extends React.Component {
         </div>
         <footer style={styles.footer}>
           <hr style={styles.hr}/>
-          ©️2018 S. Northway
+          ©️2021 S. Northway
         </footer>
       </div>
     )

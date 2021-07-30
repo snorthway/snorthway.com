@@ -17,11 +17,10 @@ export default class extends React.Component {
             <img src='/static/sawing.jpg' style={styles.img} alt="using a diamond saw to cut a champagne bottle in half"/>
           </div>
           <p style={styles.p}>
-            Rural Minnesota native, now Boston-based, currently working as a software applications
-	    engineer at RightHand Robotics. 
+            Rural Minnesota native, now Boston-based, currently working as a software engineer at Divert, Inc. 
             I care deeply about advancing technical literacy and preparing the workforce for a more automated world.
-            Over the past 2 years I have organized/taught a <a style={styles.link} href="https://girlswhocode.com">Girls Who Code</a> club, co-taught a high school 
-            computer science class through <a style={styles.link} href="https://tealsk12.org">TEALS</a>, and 
+            Over the past several years I have organized/taught a <a style={styles.link} href="https://girlswhocode.com">Girls Who Code</a> club, co-taught a high school 
+            computer science class through <a style={styles.link} href="https://tealsk12.org">TEALS</a> twice, and 
             served as a private calculus tutor.
           </p>
           <p style={styles.p}>
