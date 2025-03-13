@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import globalStyles from '../static/globalStyles.js'
+import globalStyles from '../styles/globalStyles.js'
 
 class ProjectContainer extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import globalStyles from '../static/globalStyles'
+import globalStyles from '../styles/globalStyles'
 
 import MainContainer from '../components/MainContainer'
 
@@ -27,15 +27,6 @@ export default class extends React.Component {
               style={styles.link}
             >
               Github
-            </a>
-          </p>
-          <p>
-            Tweet your thoughts at &nbsp;
-            <a 
-              href="https://twitter.com/sn0rthway" 
-              style={styles.link}
-            >
-               @sn0rthway
             </a>
           </p>
           <p>

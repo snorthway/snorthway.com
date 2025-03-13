@@ -2,17 +2,15 @@ import React from 'react'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 
-import globalStyles from '../static/globalStyles'
+import globalStyles from '../styles/globalStyles'
 
 class NavigationBar extends React.Component {
   constructor(props) {
     super(props)
   }
 
-  getDefaultProps() {
-    return {
-      active: 0,
-    }
+  static defaultProps = {
+    active: 0,
   }
 
   render() {
@@ -21,7 +19,7 @@ class NavigationBar extends React.Component {
       return (
         <li style={styles.navItem(this.props.active === pages.indexOf(l))}>
           <Link href={l}>
-            <a style={styles.link}><h5>{l}</h5></a>
+            <h5 style={styles.link}>{l}</h5>
           </Link>
         </li>
       )
