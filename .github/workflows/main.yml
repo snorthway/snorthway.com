@@ -1,9 +1,6 @@
 name: 'Copy files to remote server'
 
-on:
-  push:
-    branches:
-      - '"master"'
+on: [push]
 
 env:
   TEST: 'an environment variable'
