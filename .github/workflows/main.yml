@@ -1,0 +1,27 @@
+name: 'Copy files to remote server'
+
+on:
+  push:
+    branches:
+      - '"master"'
+
+env:
+  TEST: 'an environment variable'
+
+# stolen from https://github.com/appleboy/scp-action/issues/183#issuecomment-2558844726
+jobs:
+  simple-ssh:
+    name: Simple SSH
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4   # Checkout the files
+      - name: Set up SCP 🔑
+        # Copy ssh key from secrets to actions machine so scp can use it
+        run: |
+          mkdir -v -m 700 $HOME/.ssh
+          ssh-keyscan -H ${{ secrets.HOST }} > $HOME/.ssh/known_hosts
+          echo "${{ secrets.SSH_KEY }}" > $HOME/.ssh/id_rsa
+          chmod 400 $HOME/.ssh/id_rsa
+      - name: Upload to server ⬆️
+        run: |
+          scp -i ${{ secrets.SSH_KEY}} ./README.md ${{ secrets.SSH_USER }}@${{ secrets.HOST }}:~/README_copied.md
