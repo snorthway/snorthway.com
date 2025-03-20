@@ -25,4 +25,4 @@ jobs:
           chmod 400 $HOME/.ssh/id_rsa
       - name: Upload to server ⬆️
         run: |
-          scp -r ./site-code ${{ secrets.SSH_USER }}@${{ secrets.HOST }}:~/site-code
+          scp -r ./site-code/* ${{ secrets.SSH_USER }}@${{ secrets.HOST }}:~/site-code
