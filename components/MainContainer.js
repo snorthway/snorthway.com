@@ -19,7 +19,7 @@ class MainContainer extends React.Component {
           <title>snorthway.com - Your number one source for snorthway-related news and information</title>
         </Head>
         <div style={styles.contentContainer}>
-          <NavigationBar active={this.props.navActive}/>
+          {/* <NavigationBar active={this.props.navActive}/> */}
           <hr style={styles.hr}/>
           {this.props.children}
         </div>
