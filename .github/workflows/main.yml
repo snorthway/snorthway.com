@@ -2,10 +2,7 @@ name: 'Copy files to remote server'
 
 on: [push]
 
-env:
-  TEST: 'an environment variable'
-
-# stolen from https://github.com/appleboy/scp-action/issues/183#issuecomment-2558844726
+# stolen and modified from https://github.com/appleboy/scp-action/issues/183#issuecomment-2558844726
 jobs:
   simple-ssh:
     name: Simple SCP
@@ -26,3 +23,7 @@ jobs:
       - name: Upload to server ⬆️
         run: |
           scp -r ./site-code/* ${{ secrets.SSH_USER }}@${{ secrets.HOST }}:~/site-code
+      - name: Build the code 🛠️
+        # Building it on the server so we don't have to install npm on this machine
+        run: |
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.HOST }} 'cd site-code;npm run build'
