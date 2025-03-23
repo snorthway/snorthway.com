@@ -25,5 +25,6 @@ jobs:
           scp -r ./site-code/* ${{ secrets.SSH_USER }}@${{ secrets.HOST }}:~/site-code
       - name: Build the code 🛠️
         # Building it on the server so we don't have to install npm on this machine
+        # The command loads up nvm so that it recognizes npm later
         run: |
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.HOST }} 'cd site-code;npm run build'
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.HOST }} 'source ~/.nvm/nvm.sh && cd ~/site-code;npm run build'
