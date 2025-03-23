@@ -12,7 +12,7 @@ export default class extends React.Component {
         <div style={styles.main}>
           <h5>about snorthw<a href="http://markdua.tumblr.com/post/16090871196" style={{textDecoration: 'none', color: globalStyles.bodyColor}}>a</a>y</h5>
           <p style={styles.p}>
-            snorthway is currently re-doing this website, stay tuned please
+            snorthway is currently re-doing this website, stay tuned please ✨
           </p>
         </div>
         </MainContainer>
