@@ -1,8 +1,8 @@
-name: 'Copy files to remote server'
+name: 'Deploy code changes'
 
 on: [push]
 
-# stolen and modified from https://github.com/appleboy/scp-action/issues/183#issuecomment-2558844726
+# Stolen and modified from https://github.com/appleboy/scp-action/issues/183#issuecomment-2558844726
 jobs:
   simple-ssh:
     name: Simple SCP
