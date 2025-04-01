@@ -1,30 +1,40 @@
 import React from 'react'
+
 import Head from 'next/head'
-import Document from 'next/document'
-import PropTypes from 'prop-types'
-
-import globalStyles from '../styles/globalStyles'
-
-import NavigationBar from '../components/NavigationBar'
+import Link from 'next/link'
 
 class MainContainer extends React.Component {
   constructor(props) {
     super(props)
   }
 
+  pages = ["about", "contact"]
+
   render() {
+
+    const navLinks = this.pages.map((pageName) => {
+      return (
+        <Link href={`/${pageName}`} className={this.props.page === pageName ? "current" : ""}>
+          {pageName}
+        </Link>
+      )
+    })
+
     return (
-      <div style={styles.mainContainer}>
+      <div>
         <Head>
           <title>snorthway.com - Your number one source for snorthway-related news and information</title>
         </Head>
-        <div style={styles.contentContainer}>
-          {/* <NavigationBar active={this.props.navActive}/> */}
-          <hr style={styles.hr}/>
+        <header>
+          <h1>snorthway dot com</h1>
+          <nav>
+            {navLinks}
+          </nav>
+        </header>
+        <main>
           {this.props.children}
-        </div>
-        <footer style={styles.footer}>
-          <hr style={styles.hr}/>
+        </main>
+        <footer>
           ©️2025 S. Northway
         </footer>
       </div>
@@ -32,38 +42,5 @@ class MainContainer extends React.Component {
   }
 }
 
-MainContainer.propTypes = {
-  navActive: PropTypes.number.isRequired
-}
-
-const styles = {
-  mainContainer: {
-    minHeight: 900,
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    backgroundColor: 'black',
-    fontFamily: globalStyles.headingFont,
-  },
-  contentContainer: {
-    height: '100%',
-    width: '100%',
-    textAlign: 'center',
-    overflowY: 'scroll',
-  },
-  footer: {
-    color: globalStyles.bodyColor,
-    fontFamily: globalStyles.bodyFont,
-    width: '100%',
-    textAlign: 'center',
-    paddingBottom: '5%',
-  },
-  hr: {
-    // borderColor: '#C5E1FE',
-    // borderColor: '#87FFFB',
-    borderColor: globalStyles.accentColor,
-    width: '85%',
-  },
-}
 
 export default MainContainer
